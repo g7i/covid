@@ -3,8 +3,15 @@ from django.db import models
 
 
 class User(AbstractUser):
+
+    GENDER = (
+        ("Male", "Male"),
+        ("Female", "Female"),
+    )
+
     father_name = models.CharField(max_length=50)
     state = models.CharField(max_length=50)
+    gender = models.CharField(max_length=10, choices=GENDER)
     district = models.CharField(max_length=50)
     village = models.CharField(max_length=50, null=True, blank=True)
     latitude = models.DecimalField(max_digits=15, decimal_places=10)
