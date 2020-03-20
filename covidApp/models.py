@@ -8,10 +8,10 @@ class User(AbstractUser):
         ("Female", "Female"),
     )
 
-    father_name = models.CharField(max_length=50)
-    state = models.CharField(max_length=50)
-    gender = models.CharField(max_length=10, choices=GENDER)
-    district = models.CharField(max_length=50)
+    father_name = models.CharField(max_length=50, null=True, blank=True)
+    state = models.CharField(max_length=50, null=True, blank=True)
+    gender = models.CharField(max_length=10, choices=GENDER, default="Male")
+    district = models.CharField(max_length=50, null=True, blank=True)
     village = models.CharField(max_length=50, null=True, blank=True)
     latitude = models.DecimalField(max_digits=15, decimal_places=10)
     longitude = models.DecimalField(max_digits=15, decimal_places=10)
