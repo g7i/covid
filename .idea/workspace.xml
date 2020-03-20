@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="373ad134-0801-450f-be58-22501edcb822" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covid/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/covid/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covidApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/covidApp/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covidApp/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/covidApp/serializers.py" afterDir="false" />
-    </list>
+    <list default="true" id="373ad134-0801-450f-be58-22501edcb822" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -92,7 +87,7 @@
       <workItem from="1584531216649" duration="599000" />
       <workItem from="1584541731063" duration="533000" />
       <workItem from="1584588411895" duration="100000" />
-      <workItem from="1584721994175" duration="2599000" />
+      <workItem from="1584721994175" duration="2857000" />
     </task>
     <servers />
   </component>
