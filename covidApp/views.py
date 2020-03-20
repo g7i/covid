@@ -5,7 +5,8 @@ from requests import Response
 from rest_framework.decorators import api_view
 from rest_framework.generics import ListAPIView, CreateAPIView, RetrieveAPIView
 from rest_framework.status import HTTP_400_BAD_REQUEST, HTTP_404_NOT_FOUND, HTTP_401_UNAUTHORIZED, HTTP_200_OK
-from .serializers import UserSerializer, User
+from .serializers import UserSerializer, User, HelplineSerializer, HospitalSerializer, TestingCenterSerializer
+from .models import Helpline, Hospital, TestingCenter
 
 
 class UsersList(ListAPIView):
@@ -21,6 +22,51 @@ class UserCreate(CreateAPIView):
 class UserRetrieve(RetrieveAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+
+
+class HelplineList(ListAPIView):
+    queryset = Helpline.objects.all()
+    serializer_class = HelplineSerializer
+
+
+class HelplineCreate(CreateAPIView):
+    queryset = Helpline.objects.all()
+    serializer_class = HelplineSerializer
+
+
+class HelplineRetrieve(RetrieveAPIView):
+    queryset = Helpline.objects.all()
+    serializer_class = HelplineSerializer
+
+
+class HospitalList(ListAPIView):
+    queryset = Hospital.objects.all()
+    serializer_class = HospitalSerializer
+
+
+class HospitalCreate(CreateAPIView):
+    queryset = Hospital.objects.all()
+    serializer_class = HospitalSerializer
+
+
+class HospitalRetrieve(RetrieveAPIView):
+    queryset = Hospital.objects.all()
+    serializer_class = HospitalSerializer
+
+
+class TestingCenterList(ListAPIView):
+    queryset = TestingCenter.objects.all()
+    serializer_class = TestingCenterSerializer
+
+
+class TestingCenterCreate(CreateAPIView):
+    queryset = TestingCenter.objects.all()
+    serializer_class = TestingCenterSerializer
+
+
+class TestingCenterRetrieve(RetrieveAPIView):
+    queryset = TestingCenter.objects.all()
+    serializer_class = TestingCenterSerializer
 
 
 @csrf_exempt

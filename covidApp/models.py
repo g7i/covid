@@ -3,7 +3,6 @@ from django.db import models
 
 
 class User(AbstractUser):
-
     GENDER = (
         ("Male", "Male"),
         ("Female", "Female"),
@@ -24,3 +23,32 @@ class User(AbstractUser):
 
     def __str__(self):
         return self.username
+
+
+class TestingCenter(models.Model):
+    state = models.CharField(max_length=50)
+    district = models.CharField(max_length=50)
+    name = models.CharField(max_length=100)
+    detail = models.TextField()
+
+    def __str__(self):
+        return self.name
+
+
+class Helpline(models.Model):
+    state = models.TextField(max_length=50)
+    contact = models.BigIntegerField()
+    email = models.EmailField()
+
+    def __str__(self):
+        return self.state
+
+
+class Hospital(models.Model):
+    name = models.TextField()
+    doctor_name = models.CharField(max_length=50)
+    type = models.CharField(max_length=50)
+    contact = models.BigIntegerField()
+
+    def __str__(self):
+        return self.name
