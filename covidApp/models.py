@@ -17,6 +17,8 @@ class User(AbstractUser):
     longitude = models.DecimalField(max_digits=15, decimal_places=10, null=True, blank=True)
     is_infected = models.BooleanField(default=False)
     travelled = models.BooleanField(default=False)
+    family_infected = models.IntegerField(default=0)
+    mobile = models.IntegerField(null=True, blank=True)
     travel_country = models.CharField(max_length=50, null=True, blank=True)
     from_date = models.DateField(null=True, blank=True)
     to_date = models.DateField(null=True, blank=True)
@@ -52,3 +54,23 @@ class Hospital(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Video(models.Model):
+    title = models.CharField(max_length=50)
+    link = models.URLField()
+
+    def __str__(self):
+        return self.title
+
+
+class Faq(models.Model):
+    TYPE = (
+        ("WM", "WM"),
+        ("RM", "RM"),
+    )
+
+    que = models.TextField()
+    ans = models.TextField()
+    title = models.CharField(max_length=50)
+    type = models.CharField(max_length=50, choices=TYPE)

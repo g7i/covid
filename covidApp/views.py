@@ -4,9 +4,10 @@ from django.views.decorators.csrf import csrf_exempt
 from requests import Response
 from rest_framework.decorators import api_view
 from rest_framework.generics import ListAPIView, CreateAPIView, RetrieveAPIView
-from rest_framework.status import HTTP_400_BAD_REQUEST, HTTP_404_NOT_FOUND, HTTP_401_UNAUTHORIZED, HTTP_200_OK
-from .serializers import UserSerializer, User, HelplineSerializer, HospitalSerializer, TestingCenterSerializer
-from .models import Helpline, Hospital, TestingCenter
+from rest_framework.status import HTTP_400_BAD_REQUEST, HTTP_404_NOT_FOUND, HTTP_200_OK
+from .serializers import UserSerializer, User, HelplineSerializer, HospitalSerializer, TestingCenterSerializer, \
+    VideoSerializer, FaqSerializer
+from .models import Helpline, Hospital, TestingCenter, Video, Faq
 
 
 class UsersList(ListAPIView):
@@ -67,6 +68,36 @@ class TestingCenterCreate(CreateAPIView):
 class TestingCenterRetrieve(RetrieveAPIView):
     queryset = TestingCenter.objects.all()
     serializer_class = TestingCenterSerializer
+
+
+class VideoList(ListAPIView):
+    queryset = Video.objects.all()
+    serializer_class = VideoSerializer
+
+
+class VideoCreate(CreateAPIView):
+    queryset = Video.objects.all()
+    serializer_class = VideoSerializer
+
+
+class VideoRetrieve(RetrieveAPIView):
+    queryset = Video.objects.all()
+    serializer_class = VideoSerializer
+
+
+class FaqList(ListAPIView):
+    queryset = Faq.objects.all()
+    serializer_class = FaqSerializer
+
+
+class FaqCreate(CreateAPIView):
+    queryset = Faq.objects.all()
+    serializer_class = FaqSerializer
+
+
+class FaqRetrieve(RetrieveAPIView):
+    queryset = Faq.objects.all()
+    serializer_class = FaqSerializer
 
 
 @csrf_exempt

@@ -18,4 +18,13 @@ urlpatterns = [
     path('testing-center', views.TestingCenterList.as_view()),
     path('testing-center/<int:pk>', views.TestingCenterRetrieve.as_view()),
     path('testing-center/register', views.TestingCenterCreate.as_view()),
+
+    path('video', views.VideoList.as_view()),
+    path('video/<int:pk>', views.VideoRetrieve.as_view()),
+    path('video/create', views.VideoCreate.as_view()),
+
+    path('faq', views.FaqList.as_view()),
+    path('faq/<int:pk>', views.FaqRetrieve.as_view()),
+    path('faq/create', views.FaqCreate.as_view()),
+
 ]
