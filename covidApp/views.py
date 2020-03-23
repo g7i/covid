@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate
 from django.views.decorators.csrf import csrf_exempt
 from requests import Response
 from rest_framework.decorators import api_view
+from rest_framework.filters import SearchFilter
 from rest_framework.generics import ListAPIView, CreateAPIView, RetrieveAPIView
 from rest_framework.status import HTTP_400_BAD_REQUEST, HTTP_404_NOT_FOUND, HTTP_200_OK
 from .serializers import UserSerializer, User, HelplineSerializer, HospitalSerializer, TestingCenterSerializer, \
@@ -26,6 +27,8 @@ class UserRetrieve(RetrieveAPIView):
 
 
 class HelplineList(ListAPIView):
+    filter_backends = [SearchFilter]
+    search_fields = ['lang']
     queryset = Helpline.objects.all()
     serializer_class = HelplineSerializer
 
@@ -71,6 +74,8 @@ class TestingCenterRetrieve(RetrieveAPIView):
 
 
 class VideoList(ListAPIView):
+    filter_backends = [SearchFilter]
+    search_fields = ['lang']
     queryset = Video.objects.all()
     serializer_class = VideoSerializer
 
@@ -86,6 +91,8 @@ class VideoRetrieve(RetrieveAPIView):
 
 
 class FaqList(ListAPIView):
+    filter_backends = [SearchFilter]
+    search_fields = ['lang']
     queryset = Faq.objects.all()
     serializer_class = FaqSerializer
 
