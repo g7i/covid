@@ -41,6 +41,7 @@ class Helpline(models.Model):
     state = models.TextField(max_length=50)
     contact = models.BigIntegerField()
     email = models.EmailField()
+    lang = models.CharField(max_length=50, blank=True, null=True)
 
     def __str__(self):
         return self.state
