@@ -59,6 +59,7 @@ class Hospital(models.Model):
 class Video(models.Model):
     title = models.CharField(max_length=50)
     link = models.URLField()
+    lang = models.CharField(max_length=50, blank=True, null=True)
 
     def __str__(self):
         return self.title
@@ -72,5 +73,6 @@ class Faq(models.Model):
 
     que = models.TextField()
     ans = models.TextField()
+    lang = models.CharField(max_length=50, blank=True, null=True)
     title = models.CharField(max_length=50)
     type = models.CharField(max_length=50, choices=TYPE)
