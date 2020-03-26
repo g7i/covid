@@ -55,6 +55,8 @@ class TestingCenter(models.Model):
     district = models.CharField(max_length=50)
     name = models.CharField(max_length=100)
     address = models.TextField(null=True, blank=True)
+    type = models.CharField(max_length=50)
+    is_operational = models.BooleanField(default=True)
     detail = models.TextField()
 
     def __str__(self):
