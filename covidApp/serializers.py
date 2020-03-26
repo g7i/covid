@@ -1,7 +1,7 @@
 from django.contrib.auth import get_user_model
 from rest_framework import serializers
 
-from .models import TestingCenter, Helpline, Hospital, Video, Faq
+from .models import TestingCenter, Helpline, Hospital, Video, Faq, Member
 
 User = get_user_model()
 
@@ -22,7 +22,6 @@ class UserSerializer(serializers.ModelSerializer):
             'latitude',
             'longitude',
             'is_infected',
-            'family_infected',
             'travelled',
             'travel_country',
             'from_date',
@@ -32,6 +31,12 @@ class UserSerializer(serializers.ModelSerializer):
         extra_kwargs = {
             'password': {'write_only': True}
         }
+
+
+class MemberSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Member
+        fields = '__all__'
 
 
 class TestingCenterSerializer(serializers.ModelSerializer):

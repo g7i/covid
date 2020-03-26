@@ -1,13 +1,13 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
+GENDER = (
+    ("Male", "Male"),
+    ("Female", "Female"),
+)
+
 
 class User(AbstractUser):
-    GENDER = (
-        ("Male", "Male"),
-        ("Female", "Female"),
-    )
-
     father_name = models.CharField(max_length=50, null=True, blank=True)
     state = models.CharField(max_length=50, null=True, blank=True)
     gender = models.CharField(max_length=10, choices=GENDER, default="Male")
@@ -17,7 +17,6 @@ class User(AbstractUser):
     longitude = models.DecimalField(max_digits=15, decimal_places=10, null=True, blank=True)
     is_infected = models.BooleanField(default=False)
     travelled = models.BooleanField(default=False)
-    family_infected = models.IntegerField(default=0)
     mobile = models.IntegerField(null=True, blank=True)
     travel_country = models.CharField(max_length=50, null=True, blank=True)
     from_date = models.DateField(null=True, blank=True)
@@ -25,6 +24,26 @@ class User(AbstractUser):
 
     def __str__(self):
         return self.username
+
+
+class Member(models.Model):
+    user_id = models.IntegerField()
+    name = models.CharField(max_length=50)
+    father_name = models.CharField(max_length=50)
+    gender = models.CharField(max_length=7, choices=GENDER)
+    aadhar = models.BigIntegerField()
+    is_infected = models.BooleanField()
+    diabetes = models.BooleanField()
+    symptoms = models.BooleanField()
+    cured = models.BooleanField()
+    travelled = models.BooleanField()
+    from_date = models.DateField(null=True, blank=True)
+    to_date = models.DateField(null=True, blank=True)
+    latitude = models.DecimalField(max_digits=15, decimal_places=10)
+    longitude = models.DecimalField(max_digits=15, decimal_places=10)
+
+    def __str__(self):
+        return str(self.aadhar)
 
 
 class TestingCenter(models.Model):
@@ -77,3 +96,6 @@ class Faq(models.Model):
     lang = models.CharField(max_length=50, blank=True, null=True)
     title = models.CharField(max_length=50)
     type = models.CharField(max_length=50, choices=TYPE)
+
+    def __str__(self):
+        return self.que[:30]

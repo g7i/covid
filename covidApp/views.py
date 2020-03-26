@@ -4,11 +4,11 @@ from django.views.decorators.csrf import csrf_exempt
 from requests import Response
 from rest_framework.decorators import api_view
 from rest_framework.filters import SearchFilter
-from rest_framework.generics import ListAPIView, CreateAPIView, RetrieveAPIView
+from rest_framework.generics import ListAPIView, CreateAPIView, RetrieveAPIView, UpdateAPIView
 from rest_framework.status import HTTP_400_BAD_REQUEST, HTTP_404_NOT_FOUND, HTTP_200_OK
 from .serializers import UserSerializer, User, HelplineSerializer, HospitalSerializer, TestingCenterSerializer, \
-    VideoSerializer, FaqSerializer
-from .models import Helpline, Hospital, TestingCenter, Video, Faq
+    VideoSerializer, FaqSerializer, MemberSerializer
+from .models import Helpline, Hospital, TestingCenter, Video, Faq, Member
 
 
 class UsersList(ListAPIView):
@@ -24,6 +24,33 @@ class UserCreate(CreateAPIView):
 class UserRetrieve(RetrieveAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+
+
+class UserUpdate(UpdateAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+
+class MemberList(ListAPIView):
+    filter_backends = [SearchFilter]
+    search_fields = ['=user_id']
+    queryset = Member.objects.all()
+    serializer_class = MemberSerializer
+
+
+class MemberCreate(CreateAPIView):
+    queryset = Member.objects.all()
+    serializer_class = MemberSerializer
+
+
+class MemberRetrieve(RetrieveAPIView):
+    queryset = Member.objects.all()
+    serializer_class = MemberSerializer
+
+
+class MemberUpdate(UpdateAPIView):
+    queryset = Member.objects.all()
+    serializer_class = MemberSerializer
 
 
 class HelplineList(ListAPIView):

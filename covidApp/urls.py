@@ -5,7 +5,13 @@ urlpatterns = [
     path('', views.UsersList.as_view(), name='UsersList'),
     path('login', views.login, name='login'),
     path('<int:pk>', views.UserRetrieve.as_view(), name='UserRetrieve'),
+    path('update/<int:pk>', views.UserUpdate.as_view(), name='UserUpdate'),
     path('register', views.UserCreate.as_view(), name='UserCreate'),
+
+    path('member', views.MemberList.as_view()),
+    path('member/<int:pk>', views.MemberRetrieve.as_view()),
+    path('member/update/<int:pk>', views.MemberUpdate.as_view()),
+    path('member/create', views.MemberCreate.as_view()),
 
     path('hospital', views.HospitalList.as_view(), name='HospitalList'),
     path('hospital/<int:pk>', views.HospitalRetrieve.as_view(), name='HospitalRetrieve'),

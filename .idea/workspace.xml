@@ -3,6 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="373ad134-0801-450f-be58-22501edcb822" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covid/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/covid/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covid/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/covid/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covidApp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/covidApp/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covidApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/covidApp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covidApp/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/covidApp/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covidApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/covidApp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covidApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/covidApp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +40,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/apis" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -42,11 +50,12 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/covidApp" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/apis" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/covidApp" />
     </key>
   </component>
@@ -95,6 +104,10 @@
       <workItem from="1584882338529" duration="1511000" />
       <workItem from="1584899934926" duration="12000" />
       <workItem from="1584946199485" duration="1407000" />
+      <workItem from="1585074411522" duration="133000" />
+      <workItem from="1585162733151" duration="6598000" />
+      <workItem from="1585170836227" duration="6000" />
+      <workItem from="1585193844010" duration="4147000" />
     </task>
     <servers />
   </component>
@@ -114,5 +127,9 @@
       <screen x="75" y="0" width="1845" height="1080" />
     </state>
     <state x="483" y="164" key="SettingsEditor/75.0.1845.1080@75.0.1845.1080" timestamp="1584527915577" />
+    <state x="354" y="239" width="672" height="678" key="search.everywhere.popup" timestamp="1585163295076">
+      <screen x="75" y="0" width="1845" height="1080" />
+    </state>
+    <state x="354" y="239" width="672" height="678" key="search.everywhere.popup/75.0.1845.1080@75.0.1845.1080" timestamp="1585163295076" />
   </component>
 </project>
