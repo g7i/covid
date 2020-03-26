@@ -1,11 +1,11 @@
-from tokenize import Token
+from rest_framework.authtoken.models import Token
 from django.contrib.auth import authenticate
 from django.views.decorators.csrf import csrf_exempt
-from requests import Response
+from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework.filters import SearchFilter
 from rest_framework.generics import ListAPIView, CreateAPIView, RetrieveAPIView, UpdateAPIView
-from rest_framework.status import HTTP_400_BAD_REQUEST, HTTP_404_NOT_FOUND, HTTP_200_OK
+from rest_framework.status import HTTP_400_BAD_REQUEST, HTTP_404_NOT_FOUND, HTTP_200_OK, HTTP_500_INTERNAL_SERVER_ERROR
 from .serializers import UserSerializer, User, HelplineSerializer, HospitalSerializer, TestingCenterSerializer, \
     VideoSerializer, FaqSerializer, MemberSerializer
 from .models import Helpline, Hospital, TestingCenter, Video, Faq, Member
@@ -149,3 +149,51 @@ def login(request):
     token, _ = Token.objects.get_or_create(user=user)
     return Response({'token': token.key},
                     status=HTTP_200_OK)
+
+
+@api_view(('GET',))
+def aggregates(request):
+    try:
+        users = User.objects.all()
+        members = Member.objects.all()
+
+        registered = len(users)
+
+        infected, symptoms, recovered = set(), set(), set()
+        for user in users.filter(is_infected=True):
+            try:
+                infected.add(int(user.username))
+            except:
+                pass
+        for member in members.filter(is_infected=True):
+            infected.add(member.aadhar)
+        infected = len(list(infected))
+
+        for user in users.filter(symptoms=True):
+            try:
+                symptoms.add(int(user.username))
+            except:
+                pass
+        for member in members.filter(symptoms=True):
+            symptoms.add(member.aadhar)
+        symptoms = len(list(symptoms))
+
+        for user in users.filter(cured=True):
+            try:
+                recovered.add(int(user.username))
+            except:
+                pass
+        for member in members.filter(cured=True):
+            recovered.add(member.aadhar)
+        recovered = len(list(recovered))
+
+        data = {
+            "registered": registered,
+            "infected": infected,
+            "symptoms": symptoms,
+            "recovered": recovered
+        }
+
+        return Response(data, status=HTTP_200_OK)
+    except:
+        return Response({'error': "An Error Occured"}, status=HTTP_500_INTERNAL_SERVER_ERROR)
