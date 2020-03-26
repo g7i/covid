@@ -37,6 +37,8 @@ class Member(models.Model):
     symptoms = models.BooleanField()
     cured = models.BooleanField()
     travelled = models.BooleanField()
+    state = models.CharField(max_length=50)
+    district = models.CharField(max_length=50)
     from_date = models.DateField(null=True, blank=True)
     to_date = models.DateField(null=True, blank=True)
     latitude = models.DecimalField(max_digits=15, decimal_places=10)

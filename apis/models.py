@@ -8,6 +8,7 @@ class Advisory(models.Model):
     lang = models.CharField(max_length=50)
     title = models.CharField(max_length=100)
     detail = models.TextField()
+    is_update = models.BooleanField(default=False)
 
     def __str__(self):
         return self.title
@@ -29,10 +30,14 @@ class Awareness(models.Model):
 
 
 class GovtData(models.Model):
-    infected = models.IntegerField()
-    death = models.IntegerField()
-    cured = models.IntegerField()
-    state = models.CharField(max_length=50)
+    national = models.IntegerField(blank=True, null=True)
+    international = models.IntegerField(blank=True, null=True)
+    death = models.IntegerField(blank=True, null=True)
+    cured = models.IntegerField(blank=True, null=True)
+    cases = models.IntegerField(blank=True, null=True)
+    is_state = models.BooleanField(default=False)
+    district = models.CharField(max_length=50, blank=True, null=True)
+    state = models.CharField(max_length=50, blank=True, null=True)
 
     def __str__(self):
         return self.state
