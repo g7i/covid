@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="373ad134-0801-450f-be58-22501edcb822" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/covid/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/covid/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covid/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/covid/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covidApp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/covidApp/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covidApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/covidApp/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covidApp/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/covidApp/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covidApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/covidApp/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covidApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/covidApp/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +99,7 @@
       <workItem from="1585074411522" duration="133000" />
       <workItem from="1585162733151" duration="6598000" />
       <workItem from="1585170836227" duration="6000" />
-      <workItem from="1585193844010" duration="4147000" />
+      <workItem from="1585193844010" duration="4382000" />
     </task>
     <servers />
   </component>
