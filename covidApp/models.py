@@ -50,6 +50,7 @@ class TestingCenter(models.Model):
     state = models.CharField(max_length=50)
     district = models.CharField(max_length=50)
     name = models.CharField(max_length=100)
+    address = models.TextField(null=True, blank=True)
     detail = models.TextField()
 
     def __str__(self):
