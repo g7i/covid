@@ -154,8 +154,15 @@ def login(request):
 @api_view(('GET',))
 def aggregates(request):
     try:
+        search = request.GET.get('search', '')
+
         users = User.objects.all()
         members = Member.objects.all()
+
+        if search:
+            users = users.filter(state=search)
+            members = members.filter(state=search)
+
 
         registered = len(users)
 
