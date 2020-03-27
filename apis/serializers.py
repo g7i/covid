@@ -7,6 +7,8 @@ from .models import (
     GovtData,
     Precaution,
     CoronaAudio,
+    Requirement,
+    Neighbour
 )
 
 User = get_user_model()
@@ -39,4 +41,16 @@ class PrecautionSerializer(serializers.ModelSerializer):
 class CoronaAudioSerializer(serializers.ModelSerializer):
     class Meta:
         model = CoronaAudio
+        fields = '__all__'
+
+
+class NeighbourSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Neighbour
+        fields = '__all__'
+
+
+class RequirementSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Requirement
         fields = '__all__'

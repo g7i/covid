@@ -59,3 +59,38 @@ class CoronaAudio(models.Model):
 
     def __str__(self):
         return f'{self.user_id}'
+
+
+class Requirement(models.Model):
+    rashan = models.CharField(max_length=50, null=True, blank=True)
+    gas = models.CharField(max_length=50, null=True, blank=True)
+    medical = models.CharField(max_length=50, null=True, blank=True)
+    remarks = models.CharField(max_length=100, null=True, blank=True)
+    emergency = models.CharField(max_length=50, null=True, blank=True)
+    latitude = models.DecimalField(max_digits=15, decimal_places=10, null=True, blank=True)
+    longitude = models.DecimalField(max_digits=15, decimal_places=10, null=True, blank=True)
+    colony = models.CharField(max_length=100)
+    state = models.CharField(max_length=50)
+    district = models.CharField(max_length=50)
+    house = models.CharField(max_length=50, null=True, blank=True)
+    mobile = models.IntegerField()
+
+    def __str__(self):
+        return f'{self.mobile}'
+
+
+class Neighbour(models.Model):
+    REL = (
+        ('N', "Neighbour"),
+        ('F', 'Friend'),
+    )
+    rel = models.CharField(max_length=50, choices=REL)
+    name = models.CharField(max_length=50)
+    colony = models.CharField(max_length=100)
+    state = models.CharField(max_length=50)
+    district = models.CharField(max_length=50)
+    house = models.CharField(max_length=50, null=True, blank=True)
+    mobile = models.IntegerField()
+
+    def __str__(self):
+        return self.name

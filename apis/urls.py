@@ -17,4 +17,10 @@ urlpatterns = [
 
     path('audio/create', views.CoronaAudioCreate.as_view()),
 
+    path('neighbours', views.NeighbourList.as_view()),
+    path('neighbours/create', views.NeighbourCreate.as_view()),
+
+    path('requirements', views.RequirementList.as_view()),
+    path('requirements/create', views.RequirementCreate.as_view()),
+
 ]

@@ -6,7 +6,9 @@ from .models import (
     Awareness,
     CoronaAudio,
     GovtData,
-    Precaution
+    Precaution,
+    Neighbour,
+    Requirement
 )
 
 from .serializers import (
@@ -14,7 +16,9 @@ from .serializers import (
     AwarenessSerializer,
     GovtDataSerializer,
     PrecautionSerializer,
-    CoronaAudioSerializer
+    CoronaAudioSerializer,
+    NeighbourSerializer,
+    RequirementSerializer
 )
 
 
@@ -61,3 +65,23 @@ class PrecautionCreate(generics.CreateAPIView):
 class CoronaAudioCreate(generics.CreateAPIView):
     queryset = CoronaAudio.objects.all()
     serializer_class = CoronaAudioSerializer
+
+
+class NeighbourList(generics.ListAPIView):
+    queryset = Neighbour.objects.all()
+    serializer_class = NeighbourSerializer
+
+
+class NeighbourCreate(generics.CreateAPIView):
+    queryset = Neighbour.objects.all()
+    serializer_class = NeighbourSerializer
+
+
+class RequirementList(generics.ListAPIView):
+    queryset = Requirement.objects.all()
+    serializer_class = RequirementSerializer
+
+
+class RequirementCreate(generics.CreateAPIView):
+    queryset = Requirement.objects.all()
+    serializer_class = RequirementSerializer
