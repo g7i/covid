@@ -36,6 +36,8 @@ class GovtData(models.Model):
     cured = models.IntegerField(blank=True, null=True)
     cases = models.IntegerField(blank=True, null=True)
     is_state = models.BooleanField(default=False)
+    latitude = models.DecimalField(max_digits=15, decimal_places=10, null=True, blank=True)
+    longitude = models.DecimalField(max_digits=15, decimal_places=10, null=True, blank=True)
     district = models.CharField(max_length=50, blank=True, null=True)
     state = models.CharField(max_length=50, blank=True, null=True)
 
