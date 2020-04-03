@@ -71,6 +71,7 @@ class Requirement(models.Model):
     emergency = models.CharField(max_length=50, null=True, blank=True)
     latitude = models.DecimalField(max_digits=15, decimal_places=10, null=True, blank=True)
     longitude = models.DecimalField(max_digits=15, decimal_places=10, null=True, blank=True)
+    feedback = models.TextField(null=True, blank=True)
     colony = models.CharField(max_length=100)
     state = models.CharField(max_length=50)
     district = models.CharField(max_length=50)
@@ -91,6 +92,7 @@ class Neighbour(models.Model):
     colony = models.CharField(max_length=100)
     state = models.CharField(max_length=50)
     district = models.CharField(max_length=50)
+    gender = models.CharField(max_length=10, null=True, blank=True)
     house = models.CharField(max_length=50, null=True, blank=True)
     mobile = models.IntegerField()
 
