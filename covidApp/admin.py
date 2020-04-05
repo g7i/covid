@@ -9,10 +9,15 @@ class viewAdmin(ImportExportModelAdmin):
     pass
 
 
+@admin.register(TestingCenter)
+class viewAdmin(ImportExportModelAdmin):
+    pass
+
+
 admin.site.register(Hospital)
 admin.site.register(User)
 # admin.site.register(Helpline)
 admin.site.register(Member)
-admin.site.register(TestingCenter)
+# admin.site.register(TestingCenter)
 admin.site.register(Video)
 admin.site.register(Faq)
