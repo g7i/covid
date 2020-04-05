@@ -55,6 +55,11 @@ class Member(models.Model):
 
 
 class TestingCenter(models.Model):
+    CAT = (
+        ('TC', 'TC'),
+        ('SC', 'SC'),
+        ('PR', "PR"),
+    )
     state = models.CharField(max_length=50)
     district = models.CharField(max_length=50)
     name = models.CharField(max_length=100)
@@ -62,6 +67,7 @@ class TestingCenter(models.Model):
     type = models.CharField(max_length=50)
     is_operational = models.BooleanField(default=True)
     detail = models.TextField()
+    cat = models.CharField(max_length=2, choices=CAT)
 
     def __str__(self):
         return self.name

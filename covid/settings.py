@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'covidApp',
     'rest_framework.authtoken',
     'rest_auth',
-    'apis'
+    'apis',
+    'import_export'
 ]
 
 MIDDLEWARE = [
