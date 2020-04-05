@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="373ad134-0801-450f-be58-22501edcb822" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/covidApp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/covidApp/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +109,7 @@
       <workItem from="1585466494070" duration="207000" />
       <workItem from="1585647563463" duration="672000" />
       <workItem from="1585889715183" duration="660000" />
-      <workItem from="1586059777767" duration="1371000" />
+      <workItem from="1586059777767" duration="1485000" />
     </task>
     <servers />
   </component>
