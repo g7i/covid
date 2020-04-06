@@ -144,8 +144,9 @@ def login(request):
     if username is None or password is None:
         return Response({'error': 'Please provide both username and password'},
                         status=HTTP_400_BAD_REQUEST)
-    user = authenticate(username=username, password=password)
-    if not user:
+    try:
+        user = User.objects.get(username=username, password=password)
+    except:
         return Response({'error': 'Invalid Credentials'},
                         status=HTTP_404_NOT_FOUND)
     fuser = {
