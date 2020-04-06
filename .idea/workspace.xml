@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="373ad134-0801-450f-be58-22501edcb822" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covidApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/covidApp/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +39,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -113,7 +112,10 @@
       <workItem from="1586059777767" duration="1697000" />
       <workItem from="1586065498306" duration="5000" />
       <workItem from="1586068283901" duration="4169000" />
-      <workItem from="1586144637858" duration="261000" />
+      <workItem from="1586144637858" duration="670000" />
+      <workItem from="1586146612472" duration="6000" />
+      <workItem from="1586148104105" duration="165000" />
+      <workItem from="1586149086168" duration="10000" />
     </task>
     <servers />
   </component>
@@ -129,10 +131,10 @@
       <screen x="75" y="0" width="1845" height="1080" />
     </state>
     <state x="780" y="298" width="426" height="506" key="FileChooserDialogImpl/75.0.1845.1080@75.0.1845.1080" timestamp="1584527380744" />
-    <state x="483" y="164" key="SettingsEditor" timestamp="1584527915577">
+    <state x="483" y="164" key="SettingsEditor" timestamp="1586145292522">
       <screen x="75" y="0" width="1845" height="1080" />
     </state>
-    <state x="483" y="164" key="SettingsEditor/75.0.1845.1080@75.0.1845.1080" timestamp="1584527915577" />
+    <state x="483" y="164" key="SettingsEditor/75.0.1845.1080@75.0.1845.1080" timestamp="1586145292522" />
     <state x="354" y="239" width="672" height="678" key="search.everywhere.popup" timestamp="1585163295076">
       <screen x="75" y="0" width="1845" height="1080" />
     </state>
