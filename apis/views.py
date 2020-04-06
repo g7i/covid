@@ -30,7 +30,7 @@ class AdvisoryList(generics.ListAPIView):
         search = self.request.query_params.get('search', None)
         if search is None:
             return objs
-        if search == 'state':
+        if search == 'update':
             return objs.filter(is_update__exact=True)
         return objs.filter(is_update__exact=False)
 
