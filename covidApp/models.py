@@ -19,6 +19,7 @@ class User(AbstractUser):
     symptoms = models.BooleanField(default=False)
     cured = models.BooleanField(default=False)
     travelled = models.BooleanField(default=False)
+    decl_date = models.DateField(null=True, blank=True)
     mobile = models.IntegerField(null=True, blank=True)
     pin = models.IntegerField(null=True, blank=True)
     travel_country = models.CharField(max_length=50, null=True, blank=True)
@@ -75,7 +76,10 @@ class TestingCenter(models.Model):
 
 class Helpline(models.Model):
     state = models.TextField(max_length=50)
-    contact = models.BigIntegerField()
+    contact1 = models.BigIntegerField()
+    contact2 = models.BigIntegerField(blank=True, null=True)
+    contact3 = models.BigIntegerField(blank=True, null=True)
+    contact4 = models.BigIntegerField(blank=True, null=True)
     email = models.EmailField()
     lang = models.CharField(max_length=50, blank=True, null=True)
 
