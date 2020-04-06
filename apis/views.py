@@ -23,8 +23,13 @@ from .serializers import (
 
 
 class AdvisoryList(generics.ListAPIView):
-    queryset = Advisory.objects.all()
     serializer_class = AdvisorySerializer
+
+    def get_queryset(self):
+        search = self.kwargs['search']
+        if search == 'update':
+            return Advisory.objects.filter(is_update__exact=True)
+        return Advisory.objects.filter(is_update__exact=False)
 
 
 class AdvisoryCreate(generics.CreateAPIView):
@@ -43,8 +48,13 @@ class AwarenessCreate(generics.CreateAPIView):
 
 
 class GovtDataList(generics.ListAPIView):
-    queryset = GovtData.objects.all()
     serializer_class = GovtDataSerializer
+
+    def get_queryset(self):
+        search = self.kwargs['search']
+        if search == 'state':
+            return GovtData.objects.filter(is_state__exact=True)
+        return GovtData.objects.filter(is_state__exact=False)
 
 
 class GovtDataCreate(generics.CreateAPIView):

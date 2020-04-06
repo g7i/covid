@@ -88,6 +88,8 @@ class HospitalRetrieve(RetrieveAPIView):
 class TestingCenterList(ListAPIView):
     queryset = TestingCenter.objects.all()
     serializer_class = TestingCenterSerializer
+    filter_backends = [SearchFilter]
+    search_fields = ['=cat']
 
 
 class TestingCenterCreate(CreateAPIView):
