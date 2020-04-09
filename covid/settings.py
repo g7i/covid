@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'rest_auth',
     'apis',
-    'import_export'
+    'import_export',
+    'quiz'
 ]
 
 MIDDLEWARE = [
