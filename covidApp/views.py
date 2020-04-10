@@ -172,7 +172,7 @@ def aggregates(request):
 
         registered = len(users)
 
-        infected, symptoms, recovered = set(), set(), set()
+        infected, symptoms, recovered, death = set(), set(), set(), set()
         for user in users.filter(is_infected=True):
             try:
                 infected.add(int(user.username))
@@ -200,11 +200,16 @@ def aggregates(request):
             recovered.add(member.aadhar)
         recovered = len(list(recovered))
 
+        for member in members.filter(death=True):
+            death.add(member.aadhar)
+        death = len(list(death))
+
         data = {
             "registered": registered,
             "infected": infected,
             "symptoms": symptoms,
-            "recovered": recovered
+            "recovered": recovered,
+            'death': death
         }
 
         return Response(data, status=HTTP_200_OK)

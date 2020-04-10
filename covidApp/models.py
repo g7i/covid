@@ -37,6 +37,8 @@ class Member(models.Model):
     aadhar = models.BigIntegerField()
     is_infected = models.BooleanField(default=False)
     decl_date = models.DateField(null=True, blank=True)
+    isolated = models.BooleanField(default=False)
+    idk = models.BooleanField(default=False)
     diabetes = models.BooleanField(default=False)
     symptoms = models.BooleanField(default=False)
     cured = models.BooleanField(default=False)
