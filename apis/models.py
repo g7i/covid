@@ -95,3 +95,25 @@ class Neighbour(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class DailyBasis(models.Model):
+    state = models.CharField(max_length=150)
+    district = models.CharField(max_length=150)
+    area = models.CharField(max_length=150)
+    ward = models.CharField(max_length=150)
+    date = models.CharField(max_length=150)
+    authority = models.CharField(max_length=150)
+    contact = models.CharField(max_length=150)
+    post = models.CharField(max_length=150)
+    food = models.CharField(max_length=150)
+    vegetable = models.CharField(max_length=150)
+    ration = models.CharField(max_length=150)
+    farmer = models.CharField(max_length=150)
+    milk = models.CharField(max_length=150)
+    other = models.CharField(max_length=150)
+    announcement = models.TextField()
+    remarks = models.TextField()
+
+    def __str__(self):
+        return f'{self.state} {self.district} {self.ward}'

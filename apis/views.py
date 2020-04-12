@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from rest_framework import generics
+from rest_framework.filters import SearchFilter
 
 from .models import (
     Advisory,
@@ -8,7 +9,8 @@ from .models import (
     GovtData,
     Precaution,
     Neighbour,
-    Requirement
+    Requirement,
+    DailyBasis,
 )
 
 from .serializers import (
@@ -18,7 +20,8 @@ from .serializers import (
     PrecautionSerializer,
     CoronaAudioSerializer,
     NeighbourSerializer,
-    RequirementSerializer
+    RequirementSerializer,
+    DailyBasisSerializer,
 )
 
 
@@ -101,3 +104,15 @@ class RequirementList(generics.ListAPIView):
 class RequirementCreate(generics.CreateAPIView):
     queryset = Requirement.objects.all()
     serializer_class = RequirementSerializer
+
+
+class DailyBasisCreate(generics.CreateAPIView):
+    queryset = DailyBasis.objects.all()
+    serializer_class = DailyBasisSerializer
+
+
+class DailyBasisList(generics.ListAPIView):
+    queryset = DailyBasis.objects.all()
+    serializer_class = DailyBasisSerializer
+    filter_backends = [SearchFilter]
+    search_fields = ['district']

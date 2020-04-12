@@ -8,7 +8,8 @@ from .models import (
     Precaution,
     CoronaAudio,
     Requirement,
-    Neighbour
+    Neighbour,
+    DailyBasis,
 )
 
 User = get_user_model()
@@ -53,4 +54,10 @@ class NeighbourSerializer(serializers.ModelSerializer):
 class RequirementSerializer(serializers.ModelSerializer):
     class Meta:
         model = Requirement
+        fields = '__all__'
+
+
+class DailyBasisSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = DailyBasis
         fields = '__all__'

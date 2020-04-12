@@ -23,4 +23,7 @@ urlpatterns = [
     path('requirements', views.RequirementList.as_view()),
     path('requirements/create', views.RequirementCreate.as_view()),
 
+    path('daily-basis', views.DailyBasisList.as_view()),
+    path('daily-basis/create', views.DailyBasisCreate.as_view()),
+
 ]

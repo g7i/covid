@@ -169,7 +169,6 @@ def aggregates(request):
             users = users.filter(state=search)
             members = members.filter(state=search)
 
-
         registered = len(users)
 
         infected, symptoms, recovered, death = set(), set(), set(), set()
