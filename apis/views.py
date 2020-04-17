@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from rest_framework import generics
 from rest_framework.filters import SearchFilter
 
@@ -11,6 +10,7 @@ from .models import (
     Neighbour,
     Requirement,
     DailyBasis,
+    Home,
 )
 
 from .serializers import (
@@ -22,6 +22,7 @@ from .serializers import (
     NeighbourSerializer,
     RequirementSerializer,
     DailyBasisSerializer,
+    HomeSerializer,
 )
 
 
@@ -62,8 +63,8 @@ class GovtDataList(generics.ListAPIView):
         if search is None:
             return objs
         if search == 'state':
-            return objs.filter(is_state__exact=True)
-        return objs.filter(is_state__exact=False)
+            return objs.filter(is_state__iexact=True)
+        return objs.filter(is_state__iexact=False)
 
 
 class GovtDataCreate(generics.CreateAPIView):
@@ -97,8 +98,16 @@ class NeighbourCreate(generics.CreateAPIView):
 
 
 class RequirementList(generics.ListAPIView):
-    queryset = Requirement.objects.all()
     serializer_class = RequirementSerializer
+
+    def get_queryset(self):
+        objs = Requirement.objects.all()
+        state, dist = self.request.query_params.get('state', None), self.request.query_params.get('district', None)
+        if state is not None:
+            return objs.filter(state__iexact=state)
+        if dist is not None:
+            return objs.filter(district__iexact=dist)
+        return objs
 
 
 class RequirementCreate(generics.CreateAPIView):
@@ -116,3 +125,15 @@ class DailyBasisList(generics.ListAPIView):
     serializer_class = DailyBasisSerializer
     filter_backends = [SearchFilter]
     search_fields = ['district']
+
+
+class HomeCreate(generics.CreateAPIView):
+    queryset = Home.objects.all()
+    serializer_class = HomeSerializer
+
+
+class HomeList(generics.ListAPIView):
+    queryset = Home.objects.all()
+    serializer_class = HomeSerializer
+    filter_backends = [SearchFilter]
+    search_fields = ['=aadhar']

@@ -12,6 +12,7 @@ from .models import (
     Neighbour,
     Requirement,
     DailyBasis,
+    Home,
 )
 from import_export.admin import ImportMixin
 
@@ -45,3 +46,4 @@ admin.site.register(CoronaAudio)
 admin.site.register(Neighbour)
 admin.site.register(DailyBasis)
 admin.site.register(Requirement)
+admin.site.register(Home)

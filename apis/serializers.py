@@ -10,6 +10,7 @@ from .models import (
     Requirement,
     Neighbour,
     DailyBasis,
+    Home,
 )
 
 User = get_user_model()
@@ -60,4 +61,10 @@ class RequirementSerializer(serializers.ModelSerializer):
 class DailyBasisSerializer(serializers.ModelSerializer):
     class Meta:
         model = DailyBasis
+        fields = '__all__'
+
+
+class HomeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Home
         fields = '__all__'

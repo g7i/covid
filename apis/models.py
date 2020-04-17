@@ -117,3 +117,26 @@ class DailyBasis(models.Model):
 
     def __str__(self):
         return f'{self.state} {self.district} {self.ward}'
+
+
+class Home(models.Model):
+    name = models.CharField(max_length=100)
+    aadhar = models.BigIntegerField()
+    image = models.ImageField(upload_to='home/')
+    address = models.CharField(max_length=100)
+    district = models.CharField(max_length=100)
+    state = models.CharField(max_length=100)
+    from_district = models.CharField(max_length=100)
+    to_district = models.CharField(max_length=100)
+    from_state = models.CharField(max_length=100)
+    to_state = models.CharField(max_length=100)
+    date_of_journey = models.DateField()
+    reason = models.CharField(max_length=100)
+    have_tested = models.BooleanField()
+    have_infected = models.BooleanField()
+    mobile_number = models.BigIntegerField()
+    is_approved = models.BooleanField(default=False)
+    approval_date = models.DateField(null=True)
+
+    def __str__(self):
+        return self.name
