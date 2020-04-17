@@ -63,8 +63,8 @@ class GovtDataList(generics.ListAPIView):
         if search is None:
             return objs
         if search == 'state':
-            return objs.filter(is_state__iexact=True)
-        return objs.filter(is_state__iexact=False)
+            return objs.filter(is_state__exact=True)
+        return objs.filter(is_state__exact=False)
 
 
 class GovtDataCreate(generics.CreateAPIView):
@@ -73,8 +73,16 @@ class GovtDataCreate(generics.CreateAPIView):
 
 
 class PrecautionList(generics.ListAPIView):
-    queryset = Precaution.objects.all()
     serializer_class = PrecautionSerializer
+
+    def get_queryset(self):
+        objs = Precaution.objects.all()
+        search = self.request.query_params.get('search', None)
+        if search is None:
+            return objs
+        if search == 'lockdown':
+            return objs.filter(is_lockdown__exact=True)
+        return objs.filter(is_lockdown__exact=False)
 
 
 class PrecautionCreate(generics.CreateAPIView):
