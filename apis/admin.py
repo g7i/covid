@@ -13,6 +13,7 @@ from .models import (
     Requirement,
     DailyBasis,
     Home,
+    Bank,
 )
 from import_export.admin import ImportMixin
 
@@ -47,3 +48,4 @@ admin.site.register(Neighbour)
 admin.site.register(DailyBasis)
 admin.site.register(Requirement)
 admin.site.register(Home)
+admin.site.register(Bank)

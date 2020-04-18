@@ -141,3 +141,17 @@ class Home(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Bank(models.Model):
+    state = models.CharField(max_length=100)
+    district = models.CharField(max_length=100)
+    bank = models.CharField(max_length=100)
+    branch = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
+    aadhar = models.BigIntegerField()
+    withdrawl = models.DateField()
+    distance = models.DecimalField(max_digits=20, decimal_places=10)
+
+    def __str__(self):
+        return self.name

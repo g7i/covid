@@ -29,4 +29,7 @@ urlpatterns = [
     path('home', views.HomeList.as_view()),
     path('home/create', views.HomeCreate.as_view()),
 
+    path('bank', views.BankList.as_view()),
+    path('bank/create', views.BankCreate.as_view()),
+
 ]

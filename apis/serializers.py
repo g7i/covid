@@ -11,6 +11,7 @@ from .models import (
     Neighbour,
     DailyBasis,
     Home,
+    Bank,
 )
 
 User = get_user_model()
@@ -67,4 +68,10 @@ class DailyBasisSerializer(serializers.ModelSerializer):
 class HomeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Home
+        fields = '__all__'
+
+
+class BankSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Bank
         fields = '__all__'

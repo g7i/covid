@@ -11,6 +11,7 @@ from .models import (
     Requirement,
     DailyBasis,
     Home,
+    Bank,
 )
 
 from .serializers import (
@@ -23,6 +24,7 @@ from .serializers import (
     RequirementSerializer,
     DailyBasisSerializer,
     HomeSerializer,
+    BankSerializer,
 )
 
 
@@ -145,3 +147,13 @@ class HomeList(generics.ListAPIView):
     serializer_class = HomeSerializer
     filter_backends = [SearchFilter]
     search_fields = ['=aadhar']
+
+
+class BankCreate(generics.CreateAPIView):
+    queryset = Bank.objects.all()
+    serializer_class = BankSerializer
+
+
+class BankList(generics.ListAPIView):
+    queryset = Bank.objects.all()
+    serializer_class = BankSerializer
