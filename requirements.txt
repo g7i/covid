@@ -1,7 +1,7 @@
 Django==2.2.7
 djangorestframework==3.10.3
 gunicorn==19.9.0
-Pillow==6.2.1
+Pillow==8.2.0
 pytz==2019.3
 requests==2.12.4
 sqlparse==0.3.0
